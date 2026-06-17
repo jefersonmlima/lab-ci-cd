@@ -3,6 +3,9 @@ LABEL MANTAINER="Seu Nome"
 
 WORKDIR /app
 
+# Atualiza todos os pacotes, incluindo OpenSSL (libcrypto3/libssl3)
+RUN apk update && apk upgrade --no-cache
+
 COPY . /app
 
 RUN apk add --no-cache curl \
